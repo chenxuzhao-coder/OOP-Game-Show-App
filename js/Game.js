@@ -31,13 +31,15 @@ class Game {
         const randomPhrase = this.getRandomPhrase()
         this.activePhrase = randomPhrase
         const Phras = new Phrase(this.activePhrase)
-        Phras.addPhaseToDisplay()
+        Phras.addPhraseToDisplay()
     }
 
+    //get random phrase method
     getRandomPhrase() {
         return this.phrases[Math.floor(Math.random() * 5)]
     }
 
+    //this method determine the whole process
     handleInteraction(element) {
         element.disabled = true
         const Phras = new Phrase(this.activePhrase)
@@ -52,6 +54,7 @@ class Game {
         }
     }
 
+    //determine whether decrease life number or not
     removeLife() {
         if (this.missed < 4) {
             document.querySelectorAll('img')[this.missed].src = 'images/lostHeart.png'
@@ -61,6 +64,7 @@ class Game {
         }
     }
 
+    //to check if all letters are inputed
     checkForWin() {
         let num = 0
         const letter = this.activePhrase.split('')
@@ -69,6 +73,7 @@ class Game {
         }
     }
 
+    //determine whether game is over
     gameOver() {
         const overlay = document.querySelector('#overlay')
         overlay.style.display = 'inline'

@@ -3,7 +3,8 @@ class Phrase {
         this.phrase = phrase.toLowerCase()
     }
 
-    addPhaseToDisplay() {
+    //this method make phrase to display in hide style
+    addPhraseToDisplay() {
         const letter = this.phrase.split('')
         console.log(letter)
         const phraseElement = document.querySelector('#phrase ul')
@@ -17,6 +18,7 @@ class Phrase {
         }
     }
 
+    //this method check whether the input letter match the exist letter
     checkLetter(inputLetter) {
         const letter = this.phrase.split('')
         for (let i = 0; i < letter.length; i++) {
@@ -25,6 +27,7 @@ class Phrase {
         }
     }
 
+    //this method show the checked letter
     showMatchedLetter(inputLetter) {
         const collection = document.getElementsByClassName(inputLetter)
         for (let i = 0; i < collection.length; i++) {
