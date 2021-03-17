@@ -86,7 +86,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: black;
 }
 
 
@@ -176,11 +176,11 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #3a3f58;
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: gray ;
 }
 
 .start a {
