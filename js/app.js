@@ -1,8 +1,9 @@
 const startButton = document.querySelector('#btn__reset')
 const qwerty = document.querySelector('#qwerty')
+let game = null
 //make start button work
 startButton.addEventListener('click', e => {
-    const game = new Game(0, [new Phrase('how are you'), new Phrase('fine thank you'), new Phrase('and you')], null)
+    game = new Game(0, [new Phrase('how are you'), new Phrase('fine thank you'), new Phrase('and you')], null)
     game.startGame()
     const button = document.querySelectorAll('.key')
     for (let i = 0; i < button.length; i++) {
@@ -11,8 +12,9 @@ startButton.addEventListener('click', e => {
 })
 //make the keyboard work
 qwerty.addEventListener('click', e => {
-    if (e.target.className == 'key')
+    if (e.target.className == 'key') {
         game.handleInteraction(e.target)
+    }
 })
 //user can use physical keyboard to input letter
 document.addEventListener('keyup', e => {

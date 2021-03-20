@@ -30,13 +30,13 @@ class Game {
             console.log('after:' + heart[i].src)
         }
         this.missed = 0
-        console.log(this.missed)
         //start a new game
         const overlay = document.querySelector('#overlay')
         overlay.style.display = 'none'
         const randomPhrase = this.getRandomPhrase()
         this.activePhrase = randomPhrase
         this.activePhrase.addPhraseToDisplay()
+        console.log(this.missed)
     }
 
     //get random phrase method
@@ -46,10 +46,13 @@ class Game {
 
     //this method determine the whole process
     handleInteraction(element) {
+        console.log(this.missed)
         if (element.disabled !== true) {
             element.disabled = true
+            console.log(this.activePhrase)
             if (!this.activePhrase.checkLetter(element.textContent)) {
                 element.classList.add('wrong')
+                console.log(this.missed)
                 this.removeLife()
             } else {
                 element.classList.add('chosen')
