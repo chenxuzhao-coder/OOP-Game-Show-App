@@ -16,18 +16,12 @@ class Game {
             phraseElement.removeChild(space[i])
         const button = document.querySelectorAll('.key')
         for (let i = 0; i < button.length; i++) {
-            console.log('before:' + button[i].className)
-            console.log('before:' + button[i].disabled)
             button[i].className = 'key'
             button[i].disabled = false
-            console.log('after:' + button[i].className)
-            console.log('after:' + button[i].disabled)
         }
         const heart = document.querySelectorAll('img')
         for (let i = 0; i < heart.length; i++) {
-            console.log('before:' + heart[i].src)
             heart[i].src = 'images/liveHeart.png'
-            console.log('after:' + heart[i].src)
         }
         this.missed = 0
         //start a new game
@@ -36,7 +30,6 @@ class Game {
         const randomPhrase = this.getRandomPhrase()
         this.activePhrase = randomPhrase
         this.activePhrase.addPhraseToDisplay()
-        console.log(this.missed)
     }
 
     //get random phrase method
@@ -46,13 +39,10 @@ class Game {
 
     //this method determine the whole process
     handleInteraction(element) {
-        console.log(this.missed)
         if (element.disabled !== true) {
             element.disabled = true
-            console.log(this.activePhrase)
             if (!this.activePhrase.checkLetter(element.textContent)) {
                 element.classList.add('wrong')
-                console.log(this.missed)
                 this.removeLife()
             } else {
                 element.classList.add('chosen')
@@ -90,11 +80,9 @@ class Game {
         overlay.style.display = 'inline'
         const gameOverMessage = document.querySelector('#game-over-message')
         if (this.checkForWin()) {
-            console.log(this.checkForWin())
             gameOverMessage.textContent = 'You win !'
             overlay.className = 'win'
         } else {
-            console.log(this.checkForWin())
             gameOverMessage.textContent = 'Sorry, you lose the game'
             overlay.className = 'lose'
         }
