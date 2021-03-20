@@ -6,7 +6,6 @@ class Phrase {
     //this method make phrase to display in hide style
     addPhraseToDisplay() {
         const letter = this.phrase.split('')
-        console.log(letter)
         const phraseElement = document.querySelector('#phrase ul')
         for (let i = 0; i < letter.length; i++) {
             const child = document.createElement('li')
