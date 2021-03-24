@@ -1,8 +1,8 @@
 class Game {
-    constructor(missed = 0, phrases, activePhrase = null) {
-        this.missed = missed
-        this.phrases = phrases //array
-        this.activePhrase = activePhrase
+    constructor() {
+        this.missed = 0
+        this.phrases = [new Phrase('how are you'), new Phrase('fine thank you'), new Phrase('and you'), new Phrase('how old are you'), new Phrase('I am good')]
+        this.activePhrase = null
     }
 
     startGame() {
@@ -34,7 +34,7 @@ class Game {
 
     //get random phrase method
     getRandomPhrase() {
-        return this.phrases[Math.floor(Math.random() * 3)]
+        return this.phrases[Math.floor(Math.random() * this.phrases.length)]
     }
 
     //this method determine the whole process

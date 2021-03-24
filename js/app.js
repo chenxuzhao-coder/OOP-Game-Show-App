@@ -3,7 +3,7 @@ const qwerty = document.querySelector('#qwerty')
 let game = null
 //make start button work
 startButton.addEventListener('click', e => {
-    game = new Game(0, [new Phrase('how are you'), new Phrase('fine thank you'), new Phrase('and you')], null)
+    game = new Game()
     game.startGame()
     const button = document.querySelectorAll('.key')
     for (let i = 0; i < button.length; i++) {
